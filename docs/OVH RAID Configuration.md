@@ -130,13 +130,14 @@ load_rc_config \$name
 run_rc_command "\$1"
 ```
 
-Configure init
+Configure rc.conf
 
 ```
-vi /mnt/etc/rc.conf
-# hostname="ovh-bsd1.in.stir.software"
-# sshd_enable="YES"
-# autodhcp_enable="YES"
+cat << EOF > /mnt/etc/rc.conf
+hostname="ovh-bsd1.in.stir.software"
+zfs_enable="YES"
+sshd_enable="YES"
+autodhcp_enable="YES"
 ```
 
 Configure SSH
